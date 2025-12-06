@@ -1,0 +1,96 @@
+/* Global page background */
+body {
+    background: #f5f7fa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding-bottom: 40px;
+}
+
+/* Cards */
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px !important;
+    font-weight: 500;
+}
+
+/* Table styling */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Table header */
+.table thead {
+    background: #1a73e8;
+    color: white;
+}
+
+/* Hover highlight */
+.table tbody tr:hover {
+    background: rgba(26, 115, 232, 0.10);
+    cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 3px solid #1a73e8;
+    background: white !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: #1a73e8 !important;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #1a73e8 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #0c47a1 !important;
+    text-decoration: underline;
+}
+
+/* Headings */
+h2, h3, h4, h5 {
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Flash messages */
+.alert {
+    border-radius: 12px;
+}
+
+/* Footer spacing */
+.footer-space {
+    height: 40px;
+}
+
+/* Buttons hover */
+.btn-primary:hover {
+    background-color: #0c47a1 !important;
+}
+
+.btn-outline-primary {
+    border-color: #1a73e8;
+    color: #1a73e8;
+}
+
+.btn-outline-primary:hover {
+    background-color: #1a73e8;
+    color: white;
+}

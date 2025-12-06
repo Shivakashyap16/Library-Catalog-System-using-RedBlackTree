@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3 class="mb-4">🔍 Search Books</h3>
+
+<div class="card p-4 mb-4">
+
+  <!-- Search by ID -->
+  <form method="post" action="{{ url_for('search') }}">
+    <input type="hidden" name="type" value="id">
+
+    <label class="form-label">Search by Book ID</label>
+    <input class="form-control mb-2" name="book_id" type="number" placeholder="Enter book ID">
+    <button class="btn btn-outline-primary" type="submit">Search by ID</button>
+  </form>
+
+  <hr>
+
+  <!-- Exact title -->
+  <form method="post" action="{{ url_for('search') }}">
+    <input type="hidden" name="type" value="title_exact">
+
+    <label class="form-label">Search by Exact Title</label>
+    <input class="form-control mb-2" name="title" placeholder="Enter full title">
+    <button class="btn btn-outline-secondary" type="submit">Search Exact Title</button>
+  </form>
+
+  <hr>
+
+  <!-- Prefix -->
+  <form method="post" action="{{ url_for('search') }}">
+    <input type="hidden" name="type" value="title_prefix">
+
+    <label class="form-label">Search by Title Prefix</label>
+    <input class="form-control mb-2" name="prefix" placeholder="Enter title prefix">
+    <button class="btn btn-outline-secondary" type="submit">Search Prefix</button>
+  </form>
+</div>
+
+{% if results %}
+<h4>Results ({{ results|length }})</h4>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th><th>Title</th><th>Author</th><th>Year</th><th>Copies</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in results %}
+    <tr>
+      <td>{{ b.book_id }}</td>
+      <td>{{ b.title }}</td>
+      <td>{{ b.author }}</td>
+      <td>{{ b.year }}</td>
+      <td>{{ b.copies }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

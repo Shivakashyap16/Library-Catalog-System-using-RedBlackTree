@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2 class="mb-4">Welcome to the Library Catalog System</h2>
+
+<div class="row">
+
+  <!-- Left Section -->
+  <div class="col-md-8">
+    <div class="card p-4 mb-4">
+      <h4 class="text-primary">📊 Catalog Summary</h4>
+      <p class="mt-2">Books indexed by <strong>ID</strong>: {{ stats.by_id_count }}</p>
+      <p>Books indexed by <strong>Title</strong>: {{ stats.by_title_count }}</p>
+    </div>
+
+    <!-- Export / Import -->
+    <div class="card p-4">
+      <h5 class="text-primary mb-3">📁 Import / Export Catalog</h5>
+
+      <a class="btn btn-outline-primary me-2" href="{{ url_for('export_catalog') }}">
+        ⬇️ Export as JSON
+      </a>
+
+      <form action="{{ url_for('import_catalog') }}" method="post" enctype="multipart/form-data" class="d-inline-block">
+        <input class="form-control d-inline-block" name="file" type="file" accept=".json" style="width:280px;">
+        <button class="btn btn-outline-secondary ms-2" type="submit">⬆️ Import JSON</button>
+      </form>
+
+      <form action="{{ url_for('clear_catalog') }}" method="post" class="d-inline-block ms-2">
+        <button class="btn btn-danger" type="submit">🧹 Clear Catalog</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Quick Actions -->
+  <div class="col-md-4">
+    <div class="card p-4">
+      <h5 class="text-primary">⚡ Quick Actions</h5>
+      <a class="btn btn-primary w-100 mb-2" href="{{ url_for('add_book') }}">➕ Add New Book</a>
+      <a class="btn btn-secondary w-100 mb-2" href="{{ url_for('search') }}">🔍 Search Book</a>
+      <a class="btn btn-warning w-100 mb-2" href="{{ url_for('delete') }}">🗑️ Delete Book</a>
+      <a class="btn btn-success w-100" href="{{ url_for('list_books') }}">📄 List All Books</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

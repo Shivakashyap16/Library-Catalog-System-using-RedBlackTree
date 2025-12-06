@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3 class="mb-4">➕ Add / Update Book</h3>
+
+<div class="card p-4">
+  <form method="post" action="{{ url_for('add_book') }}">
+
+    <div class="mb-3">
+      <label class="form-label">Book ID</label>
+      <input class="form-control" name="book_id" type="number" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input class="form-control" name="title" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Author</label>
+      <input class="form-control" name="author">
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Year</label>
+        <input class="form-control" name="year" type="number">
+      </div>
+      <div class="col">
+        <label class="form-label">Copies</label>
+        <input class="form-control" name="copies" type="number" value="1">
+      </div>
+    </div>
+
+    <button class="btn btn-primary mt-4" type="submit">Save Book</button>
+  </form>
+</div>
+
+{% endblock %}
