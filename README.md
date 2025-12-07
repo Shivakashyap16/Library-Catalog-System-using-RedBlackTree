@@ -114,4 +114,4 @@ This project is licensed under the MIT License — free to use, modify, and dist
 
 ---
 
-> Built with ❤️ using Python, Flask, Bootstrap, and Advanced Data Structures
+> Built with ❤️ using **Python, Flask, Bootstrap and Advanced Data Structures**
